@@ -80,9 +80,9 @@ class Search extends MY_Controller {
 	{
 		if ( $tukhoa = trim($this->input->get('tukhoa', TRUE)) ) {
 
-			$tukhoa = slug($tukhoa);
+			$slug_tukhoa = slug($tukhoa);
 
-			$result = $this->search_model->get_posts_by_search($tukhoa, 5);
+			$result = $this->search_model->get_posts_by_search($slug_tukhoa, 5);
 
 			if ($result) {
 				if (mb_strlen($tukhoa, 'UTF-8') > 1) {
